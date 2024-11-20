@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Car Show Page</title>
+	</head>
+
+	<body>
+		<h1><%= car.name %></h1>
+		<h1><%= car._id %></h1>
+		<!-- Conditional rendering based on fruit's readiness -->
+		<% if (car.isAvailable) { %>
+		<p>This car is ready to Rock n Roll!</p>
+		<% } else { %>
+		<p>Sorry, your car is not ready yet!</p>
+		<% } %>
+
+		<form action="/cars/<%=car._id%>?_method=edit" method="POST">
+			<button type="submit">Edit Car</button>
+		</form>
+
+		<form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+			<button type="submit">Delete</button>
+		</form>
+		<br />
+
+		<a href="/cars">Back to Cars</a>
+	</body>
+</html>
